@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq.Expressions;
-
-namespace kanban_backed.Business.Interfaces
+﻿namespace kanban_backed.Business.Interfaces
 {
 	public interface IBaseRepository<T> where T: class
 	{

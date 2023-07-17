@@ -1,5 +1,4 @@
-﻿using System;
-using kanban_backed.Bs.Interfaces;
+﻿using kanban_backed.Bs.Interfaces;
 
 namespace kanban_backed.Business.Interfaces
 {

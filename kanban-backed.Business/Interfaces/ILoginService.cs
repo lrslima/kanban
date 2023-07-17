@@ -1,5 +1,4 @@
-﻿using System;
-namespace kanban_backed.Business.Interfaces
+﻿namespace kanban_backed.Business.Interfaces
 {
 	public interface ILoginService
 	{

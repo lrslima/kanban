@@ -3,6 +3,7 @@ using kanban_backend.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.IdentityModel.Tokens;
 
 namespace kanban_backend.Extensions
 {
@@ -16,7 +17,7 @@ namespace kanban_backend.Extensions
                 return;
 
             var user = context.HttpContext.Items["User"];
-            if (user == null)
+            if (user.ToString().IsNullOrEmpty())
                 context.Result = new JsonResult(new { message = "Unauthorized" }) { StatusCode = StatusCodes.Status401Unauthorized };
         }
     }

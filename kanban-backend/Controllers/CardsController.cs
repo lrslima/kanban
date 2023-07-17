@@ -21,7 +21,7 @@ namespace kanban_backend.Controllers
 		}
 
         [HttpGet]
-        public async Task<IActionResult> Get()  
+        public IActionResult Get()  
         {
             var cards = _cardService.GetAll();
 
@@ -29,7 +29,7 @@ namespace kanban_backend.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CardDTO card)
+        public IActionResult Post([FromBody] CardDTO card)
         {
             var model = card.MapFromDto(card);
             var inserted = _cardService.Insert(model);
@@ -38,7 +38,7 @@ namespace kanban_backend.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] CardDTO card)
+        public IActionResult Update([FromRoute] int id, [FromBody] CardDTO card)
         {
             var model = _cardService.GetById(id);
 
@@ -57,7 +57,7 @@ namespace kanban_backend.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete([FromRoute] int id)
+        public IActionResult Delete([FromRoute] int id)
         {
             var model = _cardService.GetById(id);
 
